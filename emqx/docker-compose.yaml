@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  emqx:
+    image: emqx/emqx:4.3.11
+    container_name: emqx
+    ports:
+      # 端口说明参见 https://hub.docker.com/r/emqx/emqx
+      - 8081:8081    # http:management
+      - 1883:1883   # tcp
+      - 8083:8083   # ws
+      - 8084:8084   # wss
+      - 8883:8883   # ssl
+      - 18083:18083  # http:dashboard
+    restart: unless-stopped
+    volumes:
+      - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime
