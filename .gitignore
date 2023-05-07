@@ -1,5 +1,4 @@
 dm/data
 kafka/zk
 kafka/kafka
-mysql57/config
-mysql57/data
+mysql/data
